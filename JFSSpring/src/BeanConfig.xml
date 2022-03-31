@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+    
+    <!--  bean id="bookstore" class="MySpring.BookStore"></bean>
+    <bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor"></bean-->
+    
+    <bean id="book" class="MySpring.Book" scope="prototype">
+    <property name="price" value="100"></property>
+    <property name="name" value="Fairy Tales"></property>
+    <property name="author" value="Hans Christian Andersen"></property>
+    <property name="id" value="B001"></property>
+    
+    
+    </bean>
+    
+     <!--  bean id="bookpublisher" class="MySpring.BookPublisher" >
+     <property name="book" ref="book"></property>
+     </bean-->
+     
+     <bean id="bookpublisher" class="MySpring.BookPublisher">
+     <property name="book_list">
+     <list>
+     <value>Fairy Tales</value>
+     <value>Harry Potter</value>
+     <value>The Lord of the Rings</value>
+     </list>
+     </property>
+     </bean>
+    
+    
+    
+
+</beans>
